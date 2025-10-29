@@ -11,17 +11,16 @@
 
 **MailDev** is a simple way to test your project's generated email during development, with an easy to use web interface that runs on your machine built on top of [Node.js](http://www.nodejs.org).
 
-![MailDev Screenshot](./screenshots/maildev-login.png)
-![MailDev Screenshot](./screenshots/maildev-home.png)
+![MailDev Screenshot](./screenshots/print-login.png)
+![MailDev Screenshot](./screenshots/print-home.png)
 
 ## Docker Run
 
 If you want to use MailDev with [Docker](https://www.docker.com/), you can use the
-[**ifgiovanni/maildev** image on Docker Hub](https://hub.docker.com/r/ifgiovanni/maildev).
-For a guide for usage with Docker,
+[**ifgiovanni/maildev** image on Docker Hub](https://hub.docker.com/r/ifgiovanni/maildev). For a guide for usage with Docker,
 [checkout the docs](https://github.com/ifgiovanni/maildev/blob/master/docs/docker.md).
 
-    $ docker run -p 80:80 -p 25:25 ifgiovanni/maildev
+    $ docker run -p 80:80 -p 25:25 ifgiovanni/maildev:v3.0.3
 
 ## Usage
 
@@ -135,7 +134,7 @@ This would allow `angelo@fbi.gov`, `ok@test.com`, `johnny@utah.com`, but deny
 
 ## Configure your project
 
-Configure your application to send emails via port `1025` and open `localhost:1080` in your browser.
+Configure your application to send emails via port `25` and open `localhost` in your browser.
 
 **Nodemailer (v1.0+)**
 
@@ -169,7 +168,7 @@ config.action_mailer.delivery_method = :smtp
 in application.properties file:
 ```
 spring.mail.host=localhost #where the smtp server is running
-spring.mail.port=1025
+spring.mail.port=25
 spring.mail.username=no-reply@gmail.com
 spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.starttls.required=true

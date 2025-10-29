@@ -53,11 +53,15 @@ app.controller('MainCtrl', [
     // Load all emails
     const loadData = function () {
       $scope.itemsLoading = true
-      $scope.items = Email.query(function () {
+      //$scope.items = Email.query(function () {
+      const from = $route.current?.params?.from || null
+      console.log('from', from)
+      $scope.items = Email.query({ from }, function () {
         $scope.itemsLoading = false
       })
       $scope.items.$promise.then(function () {
         countUnread()
+        
       })
     }
 
@@ -230,6 +234,17 @@ app.controller('MainCtrl', [
         })
         .catch(function () {
           window.alert('Unable to enable web notifications. See console for more information')
+        })
+    }
+
+    $scope.clearFilter = function () {
+      $http({
+        method: 'POST',
+        url: 'clear-filter'
+      })
+        .success(function () {
+          console.log('Filter cleared')
+          window.location.href = '/#/'
         })
     }
 

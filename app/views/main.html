@@ -1,18 +1,56 @@
-<div class="main-content">
-    <h2>
-        Now receiving all emails on port {{ config.smtpPort }}
-    </h2>
+<div class="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-gray-100 p-6">
+    <!-- Mensaje principal -->
+    <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-sm text-center">
+            Now you are viewing all emails sent from the address 
+            <strong class="text-blue-600">{{ config.filterFrom }}</strong>.
+            <hr class="my-2 border-gray-300">
+            <div class="flex items-center justify-center">
+                <p>If you want to change the filter, please </p>
+                <button 
+                  ng-click="clearFilter()" 
+                  class="flex items-center ml-2 px-2 py-1 text-sm font-sm text-white bg-red-500 rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  change the filter
+                </button>
+            </div>
+            
+    </div>
+    <br>
+    <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-sm">
+      <p class="text-gray-700">
+        <div class="text-center mb-8 space-y-4">
+            <p class="text-gray-600">
+                If you want to receive emails in this mailbox, please use the following SMTP configuration:
+                <ul class="divide-y divide-gray-200 rounded-lg border border-gray-300 bg-white shadow-md">
+                    <li class="flex items-center justify-between px-4 py-3">
+                      <span class="font-medium text-gray-700">Host:</span>
+                      <span class="text-gray-900">localhost</span>
+                    </li>
+                    <li class="flex items-center justify-between px-4 py-3">
+                      <span class="font-medium text-gray-700">Port:</span>
+                      <span class="text-gray-900">{{ config.smtpPort }}</span>
+                    </li>
+                    <li class="flex items-center justify-between px-4 py-3">
+                      <span class="font-medium text-gray-700">Username:</span>
+                      <span class="text-gray-900">{{ config.smtpUser }}</span>
+                    </li>
+                    <li class="flex items-center justify-between px-4 py-3">
+                      <span class="font-medium text-gray-700">Password:</span>
+                      <span class="text-gray-900">{{ config.smtpPass }}</span>
+                    </li>
+                    <li class="flex items-center justify-between px-4 py-3">
+                      <span class="font-medium text-gray-700">SSL:</span>
+                      <span class="text-gray-900">{{ config.smtpSecure ? 'Enabled' : 'Disabled' }}</span>
+                    </li>
+                  </ul>
+                
+                </p>
 
-    <p>
-        For information on how to send emails from your application, please refer the "<a href="https://github.com/maildev/maildev#configure-your-project" target="_blank">Configure your project</a>" guide.
-    </p>
-
-    <p>
-    	For questions, feature requests or to report issues visit the <a href="https://github.com/maildev/maildev" target="_blank">GitHub repository</a>.
-    </p>
-
-    <p>
-        <small>You are running MailDev {{ config.version }}</small>
-    </p>
-
-</div>
+            
+        </div>
+      </p>
+    </div>
+  </div>

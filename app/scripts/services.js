@@ -4,13 +4,19 @@
  * Email Resource
  */
 
-app.service('Email', ['$resource', function ($resource) {
-  return $resource('email/:id', { id: '' }, {
-    update: {
-      method: 'PUT',
-      params: {}
-    }
-  })
+app.service('Email', ['$resource', '$cookies', function ($resource, $cookies) {
+
+  // Obtener el filtro de email de los parámetros de URL  
+  const filterFrom = $cookies.filterFrom || '';  
+  return $resource('email/:id', {   
+    id: '',  
+    'from': filterFrom   
+  }, {  
+    update: {  
+      method: 'PUT',  
+      params: {}  
+    }  
+  });
 }]).service('Favicon', [function () {
   const favicon = document.getElementById('favicon')
   const canvas = document.createElement('canvas')

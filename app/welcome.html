@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MailDev - Filtro Inicial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-100 to-blue-200">
+  <div class="w-full max-w-lg p-6 bg-white rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold text-gray-800">Welcome back!</h2>
+    <h3 class="mt-2 text-lg text-gray-600">Now you can filter your emails by address.</h3>
+    <p class="mt-4 text-sm text-gray-500">
+      To filter your emails, please enter the email address you want to filter by. This will help you manage your emails more effectively.
+      If you don't want to filter, you can continue without entering anything.
+    </p>
+
+    <!-- Formulario -->
+    <form action="/set-filter" method="POST" class="mt-6">
+      <div class="mb-4">
+        <label for="emailAddress" class="block text-sm font-medium text-gray-700">From</label>
+        <input
+          type="email"
+          id="emailAddress"
+          name="email"
+          placeholder="ejemplo@dominio.com"
+          class="w-full px-4 py-2 mt-1 text-sm border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 border-gray-300"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+      >
+        Continue
+      </button>
+    </form>
+    <div class="my-4 border-t border-gray-300"></div>
+    <p class="mt-4 text-sm text-gray-500">
+      If you want to continue without filtering, just click the button below.
+      This will allow you to see all emails without any filters applied.
+    <form action="/set-filter" method="POST" class="mt-2">
+      <input type="hidden" name="email" value="all" />
+      <button
+        type="submit"
+        class="w-full px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2"
+      >
+        Continue without filtering
+      </button>
+    </form>
+  </div>
+</body>
+</html>

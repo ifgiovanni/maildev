@@ -3,16 +3,23 @@ version: '3'
 services:
 
   maildev:
-    image: maildev/maildev
+    image: ifgiovanni/maildev:v3.0.1
+    #build: .
     restart: always
     environment:
-      - TZ=Asia/Shanghai
-      - MAILDEV_WEB_PORT=1080
-      - MAILDEV_SMTP_PORT=1025
+      - TZ=America/El_Salvador
+      - MAILDEV_WEB_PORT=80
+      - MAILDEV_SMTP_PORT=25
     ports:
-      - "8080:1080"
-      - "8025:1025"
+      - "8080:80"
+      - "8025:25"
     logging:
       driver: "json-file"
       options:
         max-size: "1m"
+    networks:
+      - minsal
+
+networks:
+  minsal:
+    driver: bridge

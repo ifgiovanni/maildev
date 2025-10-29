@@ -166,25 +166,6 @@ const messages = [
     text: utf8demo,
     html: utf8demo
   },
-
-  //
-  {
-    from: 'Bodhi <bodhi@gmail.com>',
-    to: 'Johnny Utah <johnny.utah@fbi.gov>',
-    subject: 'UTF-8 quickbrown',
-    text: utf8quickbrown,
-    html: utf8quickbrown
-  },
-
-  //
-  {
-    from: 'Bodhi <bodhi@gmail.com>',
-    to: 'Johnny Utah <johnny.utah@fbi.gov>',
-    subject: 'UTF-8 subject / Я могу есть / ᛁᚳ᛫ᛗᚨᚷ᛫ᚷᛚᚨᛋ / 𐌼𐌰𐌲 𐌲𐌻𐌴𐍃 𐌹̈𐍄𐌰𐌽 / Μπορώ να φάω / 私はガ / ฉันกินก / 我能吞下 / ฉันกินก / ཤེལ་སྒོ་ཟ་ནས་ / אני יכול / მინას ვჭამ / لا يؤلمني / Mogę jeść szkło / Tsésǫʼ yishą́ągo / ⡍⠜⠇⠑⠹ ⠺',
-    text: 'This test is only for subject.'
-  }
-  */
-
   {
     from: 'Johnny Utah <johnny.utah@fbi.gov>',
     to: 'Bodhi <bodhi@gmail.com>',

@@ -7,9 +7,7 @@
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-black.svg)](https://standardjs.com)
 
 
-> MailDev is sponsored by ⭐️ **[inngest/inngest](https://github.com/inngest/inngest)**.
->
-> [**Inngest** is the developer platform](https://www.inngest.com/?ref=maildev) for easily building reliable workflows with zero infrastructure. Check it out and give it a star! ⭐️
+> This is a fork from [maildev](https://github.com/maildev/maildev/) with custom settings.
 
 **MailDev** is a simple way to test your project's generated email during development, with an easy to use web interface that runs on your machine built on top of [Node.js](http://www.nodejs.org).
 
@@ -22,7 +20,7 @@ If you want to use MailDev with [Docker](https://www.docker.com/), you can use t
 For a guide for usage with Docker,
 [checkout the docs](https://github.com/maildev/maildev/blob/master/docs/docker.md).
 
-    $ docker run -p 1080:1080 -p 1025:1025 maildev/maildev
+    $ docker run -p 80:80 -p 25:25 ifgiovanni/maildev
 
 ## Usage
 
